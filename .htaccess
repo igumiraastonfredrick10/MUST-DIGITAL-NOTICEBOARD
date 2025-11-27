@@ -1,0 +1,12 @@
+# Secure uploads directory - Block all execution
+<Files "*">
+    Order Deny,Allow
+    Deny from all
+</Files>
+# Allow only images/docs/media
+<FilesMatch "\.(jpg|jpeg|png|gif|pdf|doc|docx|xls|xlsx|ppt|pptx|txt|zip|rar|mp4|mp3|wav)$">
+    Order Allow,Deny
+    Allow from all
+</FilesMatch>
+# No directory browsing
+Options -Indexes
